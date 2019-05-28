@@ -17,11 +17,21 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 from api import views
+from rest_framework_swagger.views import get_swagger_view
+from rest_framework.routers import DefaultRouter
 
-router = routers.DefaultRouter()
-router.register(r'hmda_orwa', views.HmdaOrwaViewSet)
+router = DefaultRouter()
+router.register(r'ncdbsampleyearly', views.NcdbSampleYearlyViewSet)
+router.register(r'ncdbsamplechanges', views.NcdbSampleChangesViewSet)
+router.register(r'fipsrecords', views.FIPSRecordsViewSet)
+
+schema_view = get_swagger_view(title='Housing API')
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api/', include(router.urls)),
+    path('', schema_view)
 ]
+
+# router = routers.DefaultRouter()
+# router.register(r'ncdbsampleyearly', views.NcdbSampleYearlyViewSet)
+# router.register(r'ncdbsamplechanges', views.NcdbSampleChangesViewSet)
