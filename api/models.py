@@ -117,3 +117,23 @@ class SpatialRefSys(models.Model):
     class Meta:
         managed = True
         db_table = 'spatial_ref_sys'
+
+class TotalLoans(models.Model):
+    index = models.BigIntegerField(blank=True, null=True)
+    tct_fips = models.BigIntegerField(blank=True, null=True)
+    total_loans = models.BigIntegerField(blank=True, null=True)
+    total_poc_loans = models.FloatField(blank=True, null=True)
+    share_loans_to_poc = models.FloatField(blank=True, null=True)
+    year = models.TextField(blank=True, null=True)
+    pop_total = models.BigIntegerField(blank=True, null=True)
+    poc_total = models.BigIntegerField(blank=True, null=True)
+    share_poc = models.FloatField(blank=True, null=True)
+    total_homeowners = models.BigIntegerField(blank=True, null=True)
+    poc_owners = models.BigIntegerField(blank=True, null=True)
+    share_poc_owners = models.FloatField(blank=True, null=True)
+    loan_lq = models.FloatField(blank=True, null=True)
+    brks_lq = models.TextField(db_column='brks.lq', blank=True, null=True)  # Field renamed to remove unsuitable characters.
+
+    class Meta:
+        managed = True
+        db_table = 'total_loans'
