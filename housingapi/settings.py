@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'housingapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'NAME': 'housing-2019-staging',
+        'USER': 'housing2019',
+
         'PORT': '5432',
-    }
+    },
+
 }
 
 
