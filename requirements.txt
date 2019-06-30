@@ -1,0 +1,4 @@
+django
+django-rest-framework
+django-filter
+django-rest-swagger
