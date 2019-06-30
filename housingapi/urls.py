@@ -24,6 +24,8 @@ router = DefaultRouter()
 router.register(r'ncdbsampleyearly', views.NcdbSampleYearlyViewSet)
 router.register(r'ncdbsamplechanges', views.NcdbSampleChangesViewSet)
 router.register(r'fipsrecords', views.FIPSRecordsViewSet)
+router.register(r'hmdaorwa', views.HmdaOrwaViewSet)
+router.register(r'totalloans', views.TotalLoansViewSet)
 
 schema_view = get_swagger_view(title='Housing API')
 

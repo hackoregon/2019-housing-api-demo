@@ -67,7 +67,7 @@ class FIPSRecords(models.Model):
     geo_tract = models.FloatField(blank=True, null=True)
 
 class HmdaOrwa(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
+    index = models.BigIntegerField(primary_key=True)
     year = models.TextField(blank=True, null=True)
     actiontakentype = models.TextField(db_column='ActionTakenType', blank=True, null=True)  # Field name made lowercase.
     agencyname = models.TextField(db_column='AgencyName', blank=True, null=True)  # Field name made lowercase.
@@ -119,7 +119,7 @@ class SpatialRefSys(models.Model):
         db_table = 'spatial_ref_sys'
 
 class TotalLoans(models.Model):
-    index = models.BigIntegerField(blank=True, null=True)
+    index = models.BigIntegerField(primary_key=True)
     tct_fips = models.BigIntegerField(blank=True, null=True)
     total_loans = models.BigIntegerField(blank=True, null=True)
     total_poc_loans = models.FloatField(blank=True, null=True)

@@ -80,10 +80,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'housing-2019-staging',
         'USER': 'housing2019',
-
+        'PASSWORD': '9wpXkWvNujAV',
+        'HOST': 'housing-2019-staging.caicgny9d8nv.us-west-2.rds.amazonaws.com',
         'PORT': '5432',
     },
-
 }
 
 
