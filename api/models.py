@@ -60,6 +60,21 @@ class NcdbSampleYearly(models.Model):
     metpovrate = models.FloatField(blank=True, null=True)
     metbachshare = models.FloatField(blank=True, null=True)
 
+class NcdbMetroYearlyData(models.Model):
+    year = models.IntegerField(blank=True, null=True)
+    metroname = models.TextField(blank=True, null=True)
+    metmedinc = models.FloatField(blank=True, null=True)
+    metmedhomeval = models.FloatField(blank=True, null=True)
+    metmedrentval = models.FloatField(blank=True, null=True)
+    metownshare = models.FloatField(blank=True, null=True)
+    metwhiteshare = models.FloatField(blank=True, null=True)
+    metblackshare = models.FloatField(blank=True, null=True)
+    methispshare = models.FloatField(blank=True, null=True)
+    metasothshare = models.FloatField(blank=True, null=True)
+    metrentcbshare = models.FloatField(blank=True, null=True)
+    metpovrate = models.FloatField(blank=True, null=True)
+    metbachshare = models.FloatField(blank=True, null=True)
+
 class FIPSRecords(models.Model):
     geo_fips = models.BigIntegerField(primary_key=True)
     geo_state = models.FloatField(blank=True, null=True)
@@ -137,3 +152,15 @@ class TotalLoans(models.Model):
     class Meta:
         managed = True
         db_table = 'total_loans'
+
+class NcdbPopulationAddendum(models.Model):
+    index = models.BigIntegerField(primary_key=True)
+    geo_fips = models.BigIntegerField(db_column='Geo_FIPS', blank=True, null=True)
+    totalpopulation_90 = models.IntegerField(db_column='TotalPopulation_90', blank=True, null=True)
+    totalpopulation_00 = models.IntegerField(db_column='TotalPopulation_00', blank=True, null=True)
+    totalpopulation_10 = models.IntegerField(db_column='TotalPopulation_10', blank=True, null=True)
+    totalpopulation_17 = models.IntegerField(db_column='TotalPopulation_17', blank=True, null=True)
+
+    class Meta:
+        managed = True
+        db_table = 'ncdb_population_addendum'
